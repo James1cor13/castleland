@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "name": "castleland-management",
+  "builds": [
+    { "src": "**/*", "use": "@vercel/static" }
+  ]
+}

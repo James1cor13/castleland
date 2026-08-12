@@ -1,0 +1,99 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #34495E;     /* Navy blue */
+    --secondary-color: #5D6D7E;   /* Steel blue */
+    --accent-color: #CD853F;      /* Peru/wood tone */
+    --light-color: #ECF0F1;       /* Off-white */
+    --dark-color: #2C3E50;        /* Dark navy */
+    --gray-color: #7F8C8D;        /* Concrete gray */
+    --light-gray: #E5E8E8;        /* Light gray */
+    --highlight-color: #D7A86E;   /* Light wood */
+    --border-color: #5D6D7E;      /* Same as secondary */
+    --text-color: #2C3E50;        /* Dark navy text */
+    --box-shadow: 0 5px 15px rgba(44, 62, 80, 0.2);
+    --transition: all 0.3s ease;
+    --wood-gradient: linear-gradient(to right, #34495E, #CD853F);
+}
+
+/* This is just a sample file to show the color scheme */
+body {
+    font-family: 'EB Garamond', serif;
+    background-color: var(--light-color);
+    color: var(--text-color);
+    padding: 20px;
+}
+
+.color-sample {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.color-box {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.primary { background-color: var(--primary-color); }
+.secondary { background-color: var(--secondary-color); }
+.accent { background-color: var(--accent-color); }
+.light { background-color: var(--light-color); color: var(--dark-color); }
+.dark { background-color: var(--dark-color); }
+.gray { background-color: var(--gray-color); }
+.light-gray { background-color: var(--light-gray); color: var(--dark-color); }
+.highlight { background-color: var(--highlight-color); }
+
+.sample-header {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid var(--accent-color);
+}
+
+.sample-button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.sample-card {
+    background-color: white;
+    border: 1px solid var(--accent-color);
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: var(--box-shadow);
+}
+
+.sample-card h3 {
+    color: var(--dark-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.sample-footer {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    padding: 20px;
+    margin-top: 20px;
+}

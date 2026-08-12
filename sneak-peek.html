@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RG2HZR6PJZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-RG2HZR6PJZ');
+    </script>
+    <!-- End Google Analytics -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auction Sneak Peek - Castleland Management LLC</title>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Auction Sneak Peek - Castleland Management LLC">
+    <meta property="og:image" content="https://castlelandmanagement.com/Castleland%20logo%20777.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://castlelandmanagement.com/Castleland%20logo%20777.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="Castleland logo 777.png">
+    <link rel="apple-touch-icon" href="Castleland logo 777.png">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .gallery-container {
+            padding: 40px 0;
+        }
+        
+        .gallery-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--accent-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: white;
+            height: 0;
+            padding-bottom: 100%; /* Creates a square aspect ratio */
+            cursor: pointer;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gallery-item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .back-button {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .lightbox.active {
+            display: flex;
+        }
+        
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        
+        .lightbox-image {
+            display: block;
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            border: 3px solid white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background 0.3s;
+        }
+        
+        .lightbox-close:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            z-index: 1010;
+        }
+        
+        .lightbox-prev, .lightbox-next {
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background 0.3s;
+            margin: 0 20px;
+        }
+        
+        .lightbox-prev:hover, .lightbox-next:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+            .lightbox-prev, .lightbox-next {
+                width: 40px;
+                height: 40px;
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="Castleland logo 777.png" alt="Castleland Management LLC Logo" class="logo">
+                <h1>Castleland Management LLC</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#auctions">Current Auctions</a></li>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="gallery-container">
+        <div class="container">
+            <div class="gallery-title">
+                <h2>Castleland Cleanout Vintage and Antique Auction</h2>
+                <p class="section-intro">Sneak peek of some of the items available in our upcoming auction.</p>
+            </div>
+            
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- Gallery items will be dynamically generated by JavaScript -->
+            </div>
+            
+            <!-- Lightbox container -->
+            <div class="lightbox" id="lightbox">
+                <div class="lightbox-content">
+                    <img src="" alt="Enlarged auction item" class="lightbox-image" id="lightbox-image">
+                    <div class="lightbox-close" id="lightbox-close">&times;</div>
+                    <div class="lightbox-nav">
+                        <div class="lightbox-prev" id="lightbox-prev"><i class="fas fa-chevron-left"></i></div>
+                        <div class="lightbox-next" id="lightbox-next"><i class="fas fa-chevron-right"></i></div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="index.html" class="btn back-button"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="Castleland logo 777.png" alt="Castleland Management LLC Logo" class="footer-logo-img">
+                    <h3>Castleland Management LLC</h3>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#auctions">Current Auctions</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect With Us</h4>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=100063689644334" class="social-icon" target="_blank" style="position: relative; z-index: 10;"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Castleland Management LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Array of all image filenames
+            const imageFiles = [
+                'IMG_7419.JPG', 'IMG_7467.JPG', 'IMG_7509.JPG', 'IMG_7559.JPG', 'IMG_7588.JPG',
+                'IMG_7616.JPG', 'IMG_7674.JPG', 'IMG_7683.JPG', 'IMG_7750.JPG', 'IMG_7770.JPG',
+                'IMG_7782.JPG', 'IMG_7820.JPG', 'IMG_7843.JPG', 'IMG_7900.JPG', 'IMG_7925.JPG',
+                'IMG_7937.JPG', 'IMG_7946.JPG', 'IMG_7959.JPG', 'IMG_7966.JPG', 'IMG_7972.JPG',
+                'IMG_7977.JPG', 'IMG_7978.JPG', 'IMG_7987.JPG', 'IMG_7990.JPG', 'IMG_7992.JPG',
+                'IMG_8018.JPG', 'IMG_8022.JPG', 'IMG_8026.JPG', 'IMG_8029.JPG', 'IMG_8042.JPG',
+                'IMG_8071.JPG', 'IMG_8075.JPG', 'IMG_8094.JPG', 'IMG_8108.JPG', 'IMG_8113.JPG',
+                'IMG_8115.JPG', 'IMG_8121.JPG', 'IMG_8126.JPG', 'IMG_8131.JPG', 'IMG_8135.JPG',
+                'IMG_8143.JPG', 'IMG_8147.JPG', 'IMG_8151.JPG', 'IMG_8157.JPG', 'IMG_8169.JPG',
+                'IMG_8179.JPG', 'IMG_8186.JPG', 'IMG_8217.JPG', 'IMG_8218.JPG', 'IMG_8235.JPG',
+                'IMG_8236.JPG', 'IMG_8237.JPG', 'IMG_8238.JPG', 'IMG_8239.JPG', 'IMG_8240.JPG',
+                'IMG_8241.JPG', 'IMG_8242.JPG', 'IMG_8243.JPG', 'IMG_8244.JPG', 'IMG_8245.JPG',
+                'IMG_8246.JPG', 'IMG_8247.JPG', 'IMG_8248.JPG', 'IMG_8250.JPG', 'IMG_8251.JPG',
+                'IMG_8252.JPG', 'IMG_8253.JPG', 'IMG_8254.JPG', 'IMG_8255.JPG', 'IMG_8256.JPG',
+                'IMG_8297.JPG', 'IMG_8311.JPG', 'IMG_8321.JPG', 'IMG_8350.JPG', 'IMG_8351.JPG',
+                'IMG_8363.JPG', 'IMG_8383.JPG', 'IMG_8395.JPG', 'IMG_8408.JPG', 'IMG_8424.JPG',
+                'IMG_8444.JPG', 'IMG_8513.JPG', 'IMG_8517.JPG', 'IMG_8523.JPG', 'IMG_8526.JPG',
+                'IMG_8528.JPG', 'IMG_8532.JPG', 'IMG_8537.JPG', 'IMG_8552.JPG', 'IMG_8571.JPG',
+                'IMG_8583.JPG', 'IMG_8653.JPG', 'IMG_8654.JPG', 'IMG_8655.JPG', 'IMG_8656.JPG',
+                'IMG_8657.JPG', 'IMG_8658.JPG', 'IMG_8659.JPG', 'IMG_8660.JPG', 'IMG_8661.JPG',
+                'IMG_8662.JPG', 'IMG_8663.JPG', 'IMG_8664.JPG', 'IMG_8665.JPG', 'IMG_8666.JPG',
+                'IMG_8667.JPG'
+            ];
+            
+            const galleryGrid = document.getElementById('gallery-grid');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxClose = document.getElementById('lightbox-close');
+            const lightboxPrev = document.getElementById('lightbox-prev');
+            const lightboxNext = document.getElementById('lightbox-next');
+            
+            let currentImageIndex = 0;
+            
+            // Generate gallery items
+            imageFiles.forEach((filename, index) => {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item';
+                galleryItem.dataset.index = index;
+                
+                const img = document.createElement('img');
+                img.src = `auction-images/${filename}`;
+                img.alt = `Auction Item ${index + 1}`;
+                
+                galleryItem.appendChild(img);
+                galleryGrid.appendChild(galleryItem);
+                
+                // Add click event to open lightbox
+                galleryItem.addEventListener('click', function() {
+                    openLightbox(index);
+                });
+            });
+            
+            // Lightbox functionality
+            function openLightbox(index) {
+                currentImageIndex = index;
+                lightboxImage.src = `auction-images/${imageFiles[index]}`;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when lightbox is open
+            }
+            
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+            
+            function showPreviousImage() {
+                currentImageIndex = (currentImageIndex - 1 + imageFiles.length) % imageFiles.length;
+                lightboxImage.src = `auction-images/${imageFiles[currentImageIndex]}`;
+            }
+            
+            function showNextImage() {
+                currentImageIndex = (currentImageIndex + 1) % imageFiles.length;
+                lightboxImage.src = `auction-images/${imageFiles[currentImageIndex]}`;
+            }
+            
+            // Event listeners
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightboxPrev.addEventListener('click', showPreviousImage);
+            lightboxNext.addEventListener('click', showNextImage);
+            
+            // Close lightbox when clicking outside the image
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (!lightbox.classList.contains('active')) return;
+                
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                } else if (e.key === 'ArrowLeft') {
+                    showPreviousImage();
+                } else if (e.key === 'ArrowRight') {
+                    showNextImage();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

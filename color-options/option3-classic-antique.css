@@ -1,0 +1,99 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #4A6C6F;     /* Vintage teal */
+    --secondary-color: #846C5B;   /* Antique brown */
+    --accent-color: #C09F80;      /* Warm gold */
+    --light-color: #F4F1EA;       /* Parchment */
+    --dark-color: #3A4A4D;        /* Dark teal */
+    --gray-color: #9A9389;        /* Weathered gray */
+    --light-gray: #EAE6DF;        /* Light parchment */
+    --highlight-color: #D8C3A5;   /* Soft gold */
+    --border-color: #846C5B;      /* Same as secondary */
+    --text-color: #3A4A4D;        /* Dark teal text */
+    --box-shadow: 0 5px 15px rgba(58, 74, 77, 0.2);
+    --transition: all 0.3s ease;
+    --wood-gradient: linear-gradient(to right, #4A6C6F, #C09F80);
+}
+
+/* This is just a sample file to show the color scheme */
+body {
+    font-family: 'EB Garamond', serif;
+    background-color: var(--light-color);
+    color: var(--text-color);
+    padding: 20px;
+}
+
+.color-sample {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.color-box {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.primary { background-color: var(--primary-color); }
+.secondary { background-color: var(--secondary-color); }
+.accent { background-color: var(--accent-color); }
+.light { background-color: var(--light-color); color: var(--dark-color); }
+.dark { background-color: var(--dark-color); }
+.gray { background-color: var(--gray-color); }
+.light-gray { background-color: var(--light-gray); color: var(--dark-color); }
+.highlight { background-color: var(--highlight-color); }
+
+.sample-header {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid var(--accent-color);
+}
+
+.sample-button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.sample-card {
+    background-color: white;
+    border: 1px solid var(--accent-color);
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: var(--box-shadow);
+}
+
+.sample-card h3 {
+    color: var(--dark-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.sample-footer {
+    background-color: var(--secondary-color);
+    color: var(--light-color);
+    padding: 20px;
+    margin-top: 20px;
+}

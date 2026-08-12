@@ -1,0 +1,612 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RG2HZR6PJZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-RG2HZR6PJZ');
+    </script>
+    <!-- End Google Analytics -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Castleland Management LLC</title>
+    <meta name="description" content="Castleland Management LLC - Estate Auctions, Antiques & Collectibles">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://castlelandmanagement.com/">
+    <meta property="og:title" content="Castleland Management LLC">
+    <meta property="og:description" content="Estate Auctions, Antiques & Collectibles">
+    <meta property="og:image" content="https://castlelandmanagement.com/Castleland%20logo%20777.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://castlelandmanagement.com/">
+    <meta name="twitter:title" content="Castleland Management LLC">
+    <meta name="twitter:description" content="Estate Auctions, Antiques & Collectibles">
+    <meta name="twitter:image" content="https://castlelandmanagement.com/Castleland%20logo%20777.png">
+    
+    <style>
+        /* Prevent flash of unstyled content */
+        body { opacity: 0; }
+        .loaded { opacity: 1; transition: opacity 0.3s ease-in; }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="Castleland logo 777.png">
+    <link rel="apple-touch-icon" href="Castleland logo 777.png">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="Castleland logo 777.png" alt="Castleland Management LLC Logo" class="logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#auctions">Current Auctions</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="policies.html">Policies</a></li>
+                    <li><a href="#auctions" class="nav-cta">View Auctions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Newsletter & Cleanouts Row -->
+    <div class="newsletter-cleanouts-row" style="display: flex; gap: 0.5rem; margin: 0.5rem auto; align-items: stretch; flex-wrap: wrap; max-width: 900px;">
+        <!-- Newsletter Banner -->
+        <section class="newsletter-banner" style="flex: 1; min-width: 200px; margin: 0; padding: 0.25rem;">
+            <div class="container">
+                <div class="banner-content" style="flex-wrap: wrap;">
+                    <div class="banner-icon">
+                        <i class="fas fa-envelope-open-text"></i>
+                    </div>
+                    <div class="banner-text">
+                        <h3>Never Miss an Auction</h3>
+                        <p>Subscribe to get notified about new auctions, rare finds & exclusive deals</p>
+                    </div>
+                    <div class="banner-form">
+                        <div id="mc_embed_signup" class="mailchimp-banner-form">
+                            <form action="https://castlelandmanagement.us19.list-manage.com/subscribe/post?u=8bbbc529ff132e4fa9d0273be&amp;id=9ddaf5ee20&amp;f_id=00f5c2e1f0" method="post" id="mc-embedded-subscribe-form-banner" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                                <div class="banner-form-wrapper">
+                                    <input type="email" name="EMAIL" class="banner-email-input" id="mce-EMAIL-banner" placeholder="Enter your email address" required>
+                                    <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                                        <input type="text" name="b_8bbbc529ff132e4fa9d0273be_9ddaf5ee20" tabindex="-1" value="">
+                                    </div>
+                                    <button type="submit" name="subscribe" class="banner-subscribe-btn">
+                                        <i class="fas fa-bell"></i> Subscribe
+                                    </button>
+                                </div>
+                                <div id="mce-responses-banner" class="clear">
+                                    <div class="response" id="mce-error-response-banner" style="display: none;"></div>
+                                    <div class="response" id="mce-success-response-banner" style="display: none;"></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cleanouts Button (Desktop) -->
+        <a href="http://castlelandcleanouts.com/" target="_blank" class="cleanouts-desktop" style="display: flex; align-items: center; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)';" onmouseout="this.style.transform='scale(1)';">
+            <img src="cleanouts.PNG" alt="Castleland Cleanouts" style="height: 180px; width: auto; border-radius: 8px; box-shadow: var(--shadow-md);">
+        </a>
+    </div>
+
+    <!-- Shelf Layout Container -->
+    <div class="shelf-layout">
+
+        <!-- Current Auctions Header Image -->
+        <div style="width: 100%; text-align: center; padding: 2rem 0 1rem 0;">
+            <img src="current auctions.jpg" alt="Current Auctions" style="max-width: 220px; width: 100%; height: auto;">
+        </div>
+
+        <!-- SHELF 1: Current Auctions -->
+        <div class="shelf-row" id="auctions" style="min-height: 35vh; align-items: flex-end; padding-bottom: 1.5rem; padding-top: 1rem;">
+            <div class="shelf-auction-grid">
+                <div class="auction-card" data-ended-message="This auction ended! If you missed it, make sure you subscribe to our email list so you never miss an auction again!" data-ended-duration="86400000" onclick="window.location.href='https://www.proxibid.com/Castleland-Management-LLC/Summer-Clean-Out-Asset-Liquidation-Auction/event-catalog/298632'" style="cursor: pointer;">
+                        <div class="auction-image">
+                            <img src="summer1.JPG" alt="Summer Clean-Out &amp; Asset Liquidation Auction!" class="auction-photo" loading="lazy">
+                            <span class="auction-status status-open">Open</span>
+                        </div>
+                        <div class="auction-details">
+                            <h3>Summer Clean-Out &amp; Asset Liquidation Auction!</h3>
+                            <div class="countdown-timer" data-end="2026-07-17T19:00:00Z">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span class="countdown-text">Loading...</span>
+                            </div>
+                            <a href="https://www.proxibid.com/Castleland-Management-LLC/Summer-Clean-Out-Asset-Liquidation-Auction/event-catalog/298632" class="btn"><i class="fas fa-gavel"></i> Bid Now</a>
+                        </div>
+                </div>
+                <div class="auction-card" data-ended-message="This auction has ended. Subscribe to our email list so you never miss an auction!" data-ended-duration="172800000" onclick="window.location.href='https://www.proxibid.com/Castleland-Management-LLC/Summer-CleanOut-Asset-Liquidation-Auction-Part-2/event-catalog/298987'" style="cursor: pointer;">
+                        <div class="auction-image">
+                            <img src="summer2.JPG" alt="Summer CleanOut &amp; Asset Liquidation Auction Part 2" class="auction-photo" loading="lazy">
+                            <span class="auction-status status-open">Open</span>
+                        </div>
+                        <div class="auction-details">
+                            <h3>Summer CleanOut &amp; Asset Liquidation Auction Part 2</h3>
+                            <div class="countdown-timer" data-end="2026-07-25T19:00:00Z">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span class="countdown-text">Loading...</span>
+                            </div>
+                            <a href="https://www.proxibid.com/Castleland-Management-LLC/Summer-CleanOut-Asset-Liquidation-Auction-Part-2/event-catalog/298987" class="btn"><i class="fas fa-gavel"></i> Bid Now</a>
+                        </div>
+                </div>
+                <div class="auction-card" data-ended-message="This auction has ended. Subscribe to our email list so you never miss an auction!" data-ended-duration="172800000" onclick="window.location.href='https://www.proxibid.com/Castleland-Management-LLC/Summer-CleanOut-Asset-Liquidation-Auction-Part-3/event-catalog/299423'" style="cursor: pointer;">
+                        <div class="auction-image">
+                            <img src="sum3.JPG" alt="Summer CleanOut &amp; Asset Liquidation Auction Part 3" class="auction-photo" loading="lazy">
+                            <span class="auction-status status-open">Open</span>
+                        </div>
+                        <div class="auction-details">
+                            <h3>Summer CleanOut &amp; Asset Liquidation Auction Part 3</h3>
+                            <div class="countdown-timer" data-end="2026-08-08T19:00:00Z">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span class="countdown-text">Loading...</span>
+                            </div>
+                            <a href="https://www.proxibid.com/Castleland-Management-LLC/Summer-CleanOut-Asset-Liquidation-Auction-Part-3/event-catalog/299423" class="btn"><i class="fas fa-gavel"></i> Bid Now</a>
+                        </div>
+                </div>
+                <div class="auction-card" data-ended-message="This auction has ended. Subscribe to our email list so you never miss an auction!" data-ended-duration="172800000" onclick="window.location.href='https://www.proxibid.com/Castleland-Management-LLC/90-Year-Old-Hunter-House-Garage-Cleanout-Auction/event-catalog/299604'" style="cursor: pointer;">
+                        <div class="auction-image">
+                            <img src="hunt1.JPG" alt="90 Year Old Hunter House &amp; Garage Cleanout Auction" class="auction-photo" loading="lazy">
+                            <span class="auction-status status-open">Open</span>
+                        </div>
+                        <div class="auction-details">
+                            <h3>90 Year Old Hunter House &amp; Garage Cleanout Auction</h3>
+                            <div class="countdown-timer" data-end="2026-08-15T19:00:00Z">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span class="countdown-text">Loading...</span>
+                            </div>
+                            <a href="https://www.proxibid.com/Castleland-Management-LLC/90-Year-Old-Hunter-House-Garage-Cleanout-Auction/event-catalog/299604" class="btn"><i class="fas fa-gavel"></i> Bid Now</a>
+                        </div>
+                </div>
+                <div class="auction-card" onclick="window.location.href='https://www.proxibid.com/Castleland-Management-LLC/Spring-Firearm-Liquidation-Auction-Part-2/event-catalog/296028'" style="cursor: pointer;">
+                        <div class="auction-image">
+                            <img src="springgun2.JPG" alt="Spring Firearm Liquidation Part 2!" class="auction-photo" loading="lazy">
+                            <span class="auction-status status-open">Open</span>
+                        </div>
+                        <div class="auction-details">
+                            <h3>Spring Firearm Liquidation Part 2!</h3>
+                            <div class="countdown-timer" data-end="2026-05-16T19:30:00Z">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span class="countdown-text">Loading...</span>
+                            </div>
+                            <a href="https://www.proxibid.com/Castleland-Management-LLC/Spring-Firearm-Liquidation-Auction-Part-2/event-catalog/296028" class="btn"><i class="fas fa-gavel"></i> Bid Now</a>
+                        </div>
+                </div>
+                <div class="auction-card" onclick="window.location.href='https://www.proxibid.com/Castleland-Management-LLC/Spring-Cleanout-Auction-Part-4/event-catalog/296352'" style="cursor: pointer;">
+                        <div class="auction-image">
+                            <img src="SC4.JPG" alt="Spring Cleanout Part 4!" class="auction-photo" loading="lazy">
+                            <span class="auction-status status-open">Open</span>
+                        </div>
+                        <div class="auction-details">
+                            <h3>Spring Cleanout Part 4!</h3>
+                            <div class="countdown-timer" data-end="2026-05-23T19:00:00Z">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span class="countdown-text">Loading...</span>
+                            </div>
+                            <a href="https://www.proxibid.com/Castleland-Management-LLC/Spring-Cleanout-Auction-Part-4/event-catalog/296352" class="btn"><i class="fas fa-gavel"></i> Bid Now</a>
+                        </div>
+                </div>
+                <div class="auction-card" onclick="window.location.href='https://www.proxibid.com/Castleland-Management-LLC/Spring-Clean-Out-Auction-5/event-catalog/296626'" style="cursor: pointer;">
+                        <div class="auction-image">
+                            <img src="Spring Clean Out 5.JPG" alt="Spring Cleanout Part 5!" class="auction-photo" loading="lazy">
+                            <span class="auction-status status-open">Open</span>
+                        </div>
+                        <div class="auction-details">
+                            <h3>Spring Cleanout Part 5!</h3>
+                            <div class="countdown-timer" data-end="2026-05-25T21:00:00Z">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span class="countdown-text">Loading...</span>
+                            </div>
+                            <a href="https://www.proxibid.com/Castleland-Management-LLC/Spring-Clean-Out-Auction-5/event-catalog/296626" class="btn"><i class="fas fa-gavel"></i> Bid Now</a>
+                        </div>
+                </div>
+                <div class="auction-card" onclick="window.location.href='https://www.proxibid.com/Castleland-Management-LLC/COINS-Silver-Gold-Pennies-Nickles-Dimes/event-catalog/297273'" style="cursor: pointer;">
+                        <div class="auction-image">
+                            <img src="joncoins.jpeg" alt="COINS!!! Silver, Gold, Pennies, Nickles, Dimes!" class="auction-photo" loading="lazy">
+                            <span class="auction-status status-open">Open</span>
+                        </div>
+                        <div class="auction-details">
+                            <h3>COINS!!! Silver, Gold, Pennies, Nickles, Dimes!</h3>
+                            <div class="countdown-timer" data-end="2026-06-11T20:00:00Z">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span class="countdown-text">Loading...</span>
+                            </div>
+                            <a href="https://www.proxibid.com/Castleland-Management-LLC/COINS-Silver-Gold-Pennies-Nickles-Dimes/event-catalog/297273" class="btn"><i class="fas fa-gavel"></i> Bid Now</a>
+                        </div>
+                </div>
+                <div class="auction-card" onclick="window.location.href='https://www.proxibid.com/Castleland-Management-LLC/Antiques-Furniture-Household-Items-Collectibles/event-catalog/296982'" style="cursor: pointer;">
+                        <div class="auction-image">
+                            <img src="Uncle Bs.JPG" alt="Antiques, Furniture, Household Items, Collectibles" class="auction-photo" loading="lazy">
+                            <span class="auction-status status-open">Open</span>
+                        </div>
+                        <div class="auction-details">
+                            <h3>Antiques, Furniture, Household Items, Collectibles</h3>
+                            <div class="countdown-timer" data-end="2026-06-15T19:00:00Z">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span class="countdown-text">Loading...</span>
+                            </div>
+                            <a href="https://www.proxibid.com/Castleland-Management-LLC/Antiques-Furniture-Household-Items-Collectibles/event-catalog/296982" class="btn"><i class="fas fa-gavel"></i> Bid Now</a>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cleanouts Button (Mobile Only) -->
+        <div class="cleanouts-mobile" style="display: none; text-align: center; padding: 1rem;">
+            <a href="http://castlelandcleanouts.com/" target="_blank" style="display: inline-block; transition: transform 0.2s;">
+                <img src="cleanouts.PNG" alt="Castleland Cleanouts" style="height: 160px; width: auto; border-radius: 8px; box-shadow: var(--shadow-md);" loading="lazy">
+            </a>
+        </div>
+
+        <!-- Policies Button (below auctions) -->
+        <div style="text-align: center; padding: 1rem; z-index: 2; position: relative;">
+            <a href="policies.html" class="shelf-link-card" style="display: inline-flex;">
+                <i class="fas fa-file-contract"></i> Terms of Use, Privacy, Shipping, Refunds & Cancellations
+            </a>
+        </div>
+
+        <!-- SHELF 3: Quick Links -->
+        <div class="shelf-row" style="min-height: 32vh; align-items: flex-end; padding-bottom: 2rem;">
+            <div class="shelf-links">
+                <a href="#contact" class="shelf-link-card">
+                    <i class="fas fa-phone"></i> Contact Us
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100063689644334" class="shelf-link-card" target="_blank">
+                    <i class="fab fa-facebook-f"></i> Facebook
+                </a>
+            </div>
+        </div>
+
+    </div><!-- End shelf-layout -->
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p class="section-intro">Have questions about our auctions or services? We're here to help! Reach out to our team using any of the methods below.</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3><i class="fas fa-comments"></i> Get in Touch</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>(330) 717-1997</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>castlelandmanagement@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="Castleland logo 777.png" alt="Castleland Management LLC Logo" class="footer-logo-img" loading="lazy">
+                    <h3>Castleland Management LLC</h3>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#auctions">Current Auctions</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect With Us</h4>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=100063689644334" class="social-icon" target="_blank" style="position: relative; z-index: 10;"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Castleland Management LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+    <script type="text/javascript">
+        (function($) {
+            window.fnames = new Array(); 
+            window.ftypes = new Array();
+            fnames[0]='EMAIL';
+            ftypes[0]='email';
+        }(jQuery));
+        var $mcj = jQuery.noConflict(true);
+    </script>
+    
+    <script>
+        // Simple JavaScript to add smooth scrolling
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Check if bidding has opened for auctions with bidding-opens-notice
+        function checkBiddingOpens() {
+            const marchMadnessOpen = new Date('2026-03-03T17:00:00-05:00').getTime(); // 5:00 PM ET
+            const pistolRifleOpen = new Date('2026-04-05T00:00:00-05:00').getTime(); // 12:00 AM ET
+            const springFirearmOpen = new Date('2026-04-11T00:00:00-05:00').getTime(); // 12:00 AM ET
+            const now = new Date().getTime();
+            
+            // Check March Madness auction
+            if (now >= marchMadnessOpen) {
+                const marchMadnessCard = document.querySelector('.auction-card[onclick*="March-Madness"]');
+                if (marchMadnessCard) {
+                    const statusBadge = marchMadnessCard.querySelector('.auction-status');
+                    const biddingNotice = marchMadnessCard.querySelector('.bidding-opens-notice');
+                    const btn = marchMadnessCard.querySelector('.btn');
+                    
+                    if (statusBadge && statusBadge.classList.contains('status-preview')) {
+                        statusBadge.classList.remove('status-preview');
+                        statusBadge.classList.add('status-open');
+                        statusBadge.textContent = 'Open';
+                    }
+                    if (biddingNotice) {
+                        biddingNotice.style.display = 'none';
+                    }
+                    if (btn) {
+                        btn.innerHTML = '<i class="fas fa-gavel"></i> Bid Now';
+                    }
+                }
+            }
+            
+            // Check Pistol and Rifle auction
+            if (now >= pistolRifleOpen) {
+                const pistolRifleCard = document.querySelector('.auction-card[onclick*="Pistol-and-Rifle"]');
+                if (pistolRifleCard) {
+                    const statusBadge = pistolRifleCard.querySelector('.auction-status');
+                    const biddingNotice = pistolRifleCard.querySelector('.bidding-opens-notice');
+                    const btn = pistolRifleCard.querySelector('.btn');
+                    
+                    if (statusBadge && statusBadge.classList.contains('status-preview')) {
+                        statusBadge.classList.remove('status-preview');
+                        statusBadge.classList.add('status-open');
+                        statusBadge.textContent = 'Open';
+                    }
+                    if (biddingNotice) {
+                        biddingNotice.style.display = 'none';
+                    }
+                    if (btn) {
+                        btn.innerHTML = '<i class="fas fa-gavel"></i> Bid Now';
+                    }
+                }
+            }
+            
+            // Check Spring Firearm auction
+            if (now >= springFirearmOpen) {
+                const springFirearmCard = document.querySelector('.auction-card[onclick*="Spring-Firearm"]');
+                if (springFirearmCard) {
+                    const statusBadge = springFirearmCard.querySelector('.auction-status');
+                    const biddingNotice = springFirearmCard.querySelector('.bidding-opens-notice');
+                    const btn = springFirearmCard.querySelector('.btn');
+                    
+                    if (statusBadge && statusBadge.classList.contains('status-preview')) {
+                        statusBadge.classList.remove('status-preview');
+                        statusBadge.classList.add('status-open');
+                        statusBadge.textContent = 'Open';
+                    }
+                    if (biddingNotice) {
+                        biddingNotice.style.display = 'none';
+                    }
+                    if (btn) {
+                        btn.innerHTML = '<i class="fas fa-gavel"></i> Bid Now';
+                    }
+                }
+            }
+        }
+
+        // Format end date as "Ends Saturday, May 23rd at 3:00 PM ET"
+        function formatEndDate(date) {
+            const formatter = new Intl.DateTimeFormat('en-US', {
+                timeZone: 'America/New_York',
+                weekday: 'long',
+                month: 'long',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: '2-digit',
+                hour12: true
+            });
+            const parts = formatter.formatToParts(date);
+            const get = (type) => parts.find(p => p.type === type)?.value || '';
+            
+            const dayName = get('weekday');
+            const monthName = get('month');
+            const dayNum = parseInt(get('day'));
+            const hours = get('hour');
+            const minutes = get('minute');
+            const ampm = get('dayPeriod');
+            
+            // Add ordinal suffix
+            const suffix = (dayNum % 10 === 1 && dayNum !== 11) ? 'st' :
+                          (dayNum % 10 === 2 && dayNum !== 12) ? 'nd' :
+                          (dayNum % 10 === 3 && dayNum !== 13) ? 'rd' : 'th';
+            
+            return `Ends ${dayName}, ${monthName} ${dayNum}${suffix} at ${hours}:${minutes} ${ampm} ET`;
+        }
+
+        // Inject end date display into each auction card
+        function injectEndDates() {
+            const timers = document.querySelectorAll('.shelf-auction-grid .countdown-timer');
+            timers.forEach(timer => {
+                const auctionCard = timer.closest('.auction-card');
+                if (!auctionCard || auctionCard.querySelector('.end-date-display')) return;
+                
+                const endDate = new Date(timer.dataset.end);
+                const endDateDisplay = document.createElement('div');
+                endDateDisplay.className = 'end-date-display';
+                endDateDisplay.style.cssText = 'color: #d4a574; font-size: 0.85rem; margin: 0.25rem 0 0.5rem 0; text-align: center; font-weight: 500;';
+                endDateDisplay.innerHTML = '<i class="fas fa-calendar-alt"></i> ' + formatEndDate(endDate);
+                
+                timer.parentNode.insertBefore(endDateDisplay, timer);
+            });
+        }
+
+        // Countdown Timer
+        function updateCountdowns() {
+            const timers = document.querySelectorAll('.shelf-auction-grid .countdown-timer');
+            const endingDuration = 120 * 60 * 1000; // 2 hours in milliseconds
+            
+            timers.forEach(timer => {
+                const endDate = new Date(timer.dataset.end).getTime();
+                const now = new Date().getTime();
+                const distance = endDate - now;
+                const auctionCard = timer.closest('.auction-card');
+                const countdownText = timer.querySelector('.countdown-text');
+                
+                // Special case for Spring Clean-Out Auction #3 - 45min ending duration
+                let currentEndingDuration = endingDuration;
+                if (auctionCard && auctionCard.querySelector('h3') && 
+                    auctionCard.querySelector('h3').textContent.includes('Spring Clean Out #3')) {
+                    currentEndingDuration = 45 * 60 * 1000; // 45 minutes in milliseconds
+                }
+                // Special case for Spring Firearm Liquidation Part 2 - 1 hour ending duration
+                if (auctionCard && auctionCard.querySelector('h3') && 
+                    auctionCard.querySelector('h3').textContent.includes('Spring Firearm Liquidation Part 2')) {
+                    currentEndingDuration = 60 * 60 * 1000; // 1 hour in milliseconds
+                }
+                // Special case for Spring Cleanout Part 4 - 1.5 hour ending duration
+                if (auctionCard && auctionCard.querySelector('h3') && 
+                    auctionCard.querySelector('h3').textContent.includes('Spring Cleanout Part 4')) {
+                    currentEndingDuration = 90 * 60 * 1000; // 1.5 hours in milliseconds
+                }
+                // Special case for COINS auction - 49 minute ending duration (4:00pm - 4:49pm ET)
+                if (auctionCard && auctionCard.querySelector('h3') && 
+                    auctionCard.querySelector('h3').textContent.includes('COINS!!!')) {
+                    currentEndingDuration = 49 * 60 * 1000; // 49 minutes in milliseconds
+                }
+                // Special case for Summer CleanOut Part 3 auction - 40 minute ending duration (3:00pm - 3:40pm ET)
+                if (auctionCard && auctionCard.querySelector('h3') && 
+                    auctionCard.querySelector('h3').textContent.includes('Part 3')) {
+                    currentEndingDuration = 40 * 60 * 1000; // 40 minutes in milliseconds
+                }
+                // Special case for Summer CleanOut Part 2 auction - 65 minute ending duration (3:00pm - 4:05pm ET)
+                if (auctionCard && auctionCard.querySelector('h3') && 
+                    auctionCard.querySelector('h3').textContent.includes('Summer CleanOut')) {
+                    currentEndingDuration = 65 * 60 * 1000; // 1h 5m in milliseconds
+                }
+                // Special case for 90 Year Old Hunter House & Garage Cleanout Auction - 125 minute ending duration (3:00pm - 5:05pm ET)
+                if (auctionCard && auctionCard.querySelector('h3') && 
+                    auctionCard.querySelector('h3').textContent.includes('Hunter House')) {
+                    currentEndingDuration = 125 * 60 * 1000; // 2h 5m in milliseconds
+                }
+                // Special case for Summer Clean-Out & Asset Liquidation auction - 138 minute ending duration (3:00pm - 5:18pm ET)
+                if (auctionCard && auctionCard.querySelector('h3') && 
+                    auctionCard.querySelector('h3').textContent.includes('Summer Clean-Out')) {
+                    currentEndingDuration = 138 * 60 * 1000; // 2h 18m in milliseconds
+                }
+                
+                // Auction ended more than ending duration ago
+                if (distance < -currentEndingDuration) {
+                    // If card has data-ended-duration, hide after that window past ending
+                    const endedDurationMs = auctionCard ? parseInt(auctionCard.dataset.endedDuration, 10) : NaN;
+                    if (auctionCard && !isNaN(endedDurationMs) && distance < -(currentEndingDuration + endedDurationMs)) {
+                        auctionCard.dataset.moved = 'true';
+                        auctionCard.style.display = 'none';
+                        return;
+                    }
+                    if (auctionCard && !auctionCard.dataset.moved) {
+                        auctionCard.dataset.moved = 'true';
+                        const endedMessage = auctionCard.dataset.endedMessage;
+                        if (endedMessage) {
+                            // Show custom ended message instead of hiding
+                            countdownText.textContent = endedMessage;
+                            timer.classList.add('ending-now');
+                            const statusBadge = auctionCard.querySelector('.auction-status');
+                            if (statusBadge) {
+                                statusBadge.classList.remove('status-open');
+                                statusBadge.classList.add('status-ended');
+                                statusBadge.textContent = 'Ended';
+                            }
+                            const btn = auctionCard.querySelector('.btn');
+                            if (btn) {
+                                btn.innerHTML = '<i class="fas fa-history"></i> View Results';
+                            }
+                        } else {
+                            auctionCard.style.display = 'none';
+                        }
+                    } else if (auctionCard && auctionCard.dataset.endedMessage) {
+                        // Keep the custom message visible on subsequent ticks
+                        countdownText.textContent = auctionCard.dataset.endedMessage;
+                    }
+                    return;
+                }
+                
+                // Auction ended but within ending duration window - show "AUCTION ENDING NOW!"
+                if (distance < 0) {
+                    countdownText.textContent = 'AUCTION ENDING NOW!';
+                    timer.classList.add('ending-now');
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                let timeString = '';
+                if (days > 0) timeString += days + 'd ';
+                if (hours > 0 || days > 0) timeString += hours + 'h ';
+                timeString += minutes + 'm ' + seconds + 's';
+
+                countdownText.textContent = timeString + ' left';
+            });
+        }
+
+        // Sort auction cards by end date ascending (soonest ending first / leftmost)
+        function sortAuctionCards() {
+            document.querySelectorAll('.shelf-auction-grid').forEach(grid => {
+                const cards = Array.from(grid.querySelectorAll(':scope > .auction-card'));
+                cards.sort((a, b) => {
+                    const ta = a.querySelector('.countdown-timer');
+                    const tb = b.querySelector('.countdown-timer');
+                    const da = ta ? new Date(ta.dataset.end).getTime() : Infinity;
+                    const db = tb ? new Date(tb.dataset.end).getTime() : Infinity;
+                    return da - db;
+                });
+                cards.forEach(card => grid.appendChild(card));
+            });
+        }
+
+        sortAuctionCards();
+        injectEndDates();
+        updateCountdowns();
+        checkBiddingOpens();
+        setInterval(updateCountdowns, 1000);
+        setInterval(checkBiddingOpens, 1000);
+        
+        // Fade in content after page loads
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>

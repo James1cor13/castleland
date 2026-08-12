@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Style - Castleland</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'EB Garamond', serif;
+            background: #f5f5f5;
+            padding: 30px;
+        }
+        
+        h1 {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+        
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .template-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .template-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+        
+        .template-name {
+            padding: 15px 20px;
+            background: #333;
+            color: white;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            text-align: center;
+        }
+        
+        .template-preview {
+            padding: 20px;
+        }
+        
+        .preview-header {
+            padding: 15px;
+            text-align: center;
+            color: white;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+        
+        .preview-hero {
+            padding: 25px;
+            text-align: center;
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        .preview-hero h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        
+        .preview-hero p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+        
+        .preview-btn {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+        
+        .preview-cards {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .preview-card {
+            flex: 1;
+            padding: 12px;
+            border-radius: 4px;
+        }
+        
+        .preview-card h4 {
+            font-size: 0.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .preview-card p {
+            font-size: 0.7rem;
+            opacity: 0.8;
+        }
+        
+        .preview-footer {
+            padding: 15px;
+            text-align: center;
+            color: white;
+            font-size: 0.8rem;
+        }
+        
+        .color-swatches {
+            display: flex;
+            gap: 5px;
+            justify-content: center;
+            margin-top: 15px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 6px;
+        }
+        
+        .swatch {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        /* Template 1: Ocean Breeze */
+        .t1-header { background: linear-gradient(180deg, #0077B6 0%, #005F8C 100%); }
+        .t1-hero { background: linear-gradient(180deg, #005F8C 0%, #023E58 50%, #005F8C 100%); }
+        .t1-btn { background: #48CAE4; color: #023E58; border: 2px solid #90E0EF; }
+        .t1-card { background: #CAF0F8; color: #023E58; border: 2px solid #0077B6; }
+        .t1-footer { background: linear-gradient(180deg, #005F8C 0%, #023E58 100%); }
+        
+        /* Template 2: Forest Meadow */
+        .t2-header { background: linear-gradient(180deg, #2D6A4F 0%, #1B4332 100%); }
+        .t2-hero { background: linear-gradient(180deg, #1B4332 0%, #081C15 50%, #1B4332 100%); }
+        .t2-btn { background: #95D5B2; color: #081C15; border: 2px solid #74C69D; }
+        .t2-card { background: #D8F3DC; color: #1B4332; border: 2px solid #40916C; }
+        .t2-footer { background: linear-gradient(180deg, #1B4332 0%, #081C15 100%); }
+        
+        /* Template 3: Sky Blue */
+        .t3-header { background: linear-gradient(180deg, #4A90A4 0%, #2E6171 100%); }
+        .t3-hero { background: linear-gradient(180deg, #2E6171 0%, #1A3C48 50%, #2E6171 100%); }
+        .t3-btn { background: #89CFF0; color: #1A3C48; border: 2px solid #5EB1D4; }
+        .t3-card { background: #E0F4FF; color: #1A3C48; border: 2px solid #4A90A4; }
+        .t3-footer { background: linear-gradient(180deg, #2E6171 0%, #1A3C48 100%); }
+        
+        /* Template 4: Mint Fresh */
+        .t4-header { background: linear-gradient(180deg, #3EB489 0%, #2A8A64 100%); }
+        .t4-hero { background: linear-gradient(180deg, #2A8A64 0%, #1A5A40 50%, #2A8A64 100%); }
+        .t4-btn { background: #98E4C9; color: #1A5A40; border: 2px solid #6BCCA2; }
+        .t4-card { background: #E8FBF4; color: #1A5A40; border: 2px solid #3EB489; }
+        .t4-footer { background: linear-gradient(180deg, #2A8A64 0%, #1A5A40 100%); }
+        
+        /* Template 5: Sage & Stone */
+        .t5-header { background: linear-gradient(180deg, #6B7F6B 0%, #4A5D4A 100%); }
+        .t5-hero { background: linear-gradient(180deg, #4A5D4A 0%, #2D3A2D 50%, #4A5D4A 100%); }
+        .t5-btn { background: #A8C5A8; color: #2D3A2D; border: 2px solid #8FB38F; }
+        .t5-card { background: #EDF4ED; color: #2D3A2D; border: 2px solid #6B7F6B; }
+        .t5-footer { background: linear-gradient(180deg, #4A5D4A 0%, #2D3A2D 100%); }
+        
+        /* Template 6: Coastal Blue */
+        .t6-header { background: linear-gradient(180deg, #5B8FA8 0%, #3D6F8C 100%); }
+        .t6-hero { background: linear-gradient(180deg, #3D6F8C 0%, #234556 50%, #3D6F8C 100%); }
+        .t6-btn { background: #A3D4E8; color: #234556; border: 2px solid #7BC0D8; }
+        .t6-card { background: #E8F5FA; color: #234556; border: 2px solid #5B8FA8; }
+        .t6-footer { background: linear-gradient(180deg, #3D6F8C 0%, #234556 100%); }
+        
+        /* Template 7: Seafoam Dream */
+        .t7-header { background: linear-gradient(180deg, #20B2AA 0%, #148F88 100%); }
+        .t7-hero { background: linear-gradient(180deg, #148F88 0%, #0A5852 50%, #148F88 100%); }
+        .t7-btn { background: #7FDBDA; color: #0A5852; border: 2px solid #4ECDC4; }
+        .t7-card { background: #E0F7F6; color: #0A5852; border: 2px solid #20B2AA; }
+        .t7-footer { background: linear-gradient(180deg, #148F88 0%, #0A5852 100%); }
+        
+        /* Template 8: Warm Slate */
+        .t8-header { background: linear-gradient(180deg, #5D7A8C 0%, #3E5666 100%); }
+        .t8-hero { background: linear-gradient(180deg, #3E5666 0%, #253540 50%, #3E5666 100%); }
+        .t8-btn { background: #8FAFC2; color: #253540; border: 2px solid #6D98AE; }
+        .t8-card { background: #EEF3F6; color: #253540; border: 2px solid #5D7A8C; }
+        .t8-footer { background: linear-gradient(180deg, #3E5666 0%, #253540 100%); }
+    </style>
+</head>
+<body>
+    <h1>Choose Your Color Theme</h1>
+    <p class="subtitle">Pick the style you like best, then tell me the number!</p>
+    
+    <div class="templates-grid">
+        <!-- Template 1: Ocean Breeze -->
+        <div class="template-card">
+            <div class="template-name">1. Ocean Breeze</div>
+            <div class="template-preview">
+                <div class="preview-header t1-header">CASTLELAND AUCTIONS</div>
+                <div class="preview-hero t1-hero">
+                    <h3>Welcome to Castleland</h3>
+                    <p>Your trusted auction house</p>
+                    <span class="preview-btn t1-btn">View Auctions</span>
+                </div>
+                <div class="preview-cards">
+                    <div class="preview-card t1-card">
+                        <h4>Current Auction</h4>
+                        <p>House Cleanout</p>
+                    </div>
+                    <div class="preview-card t1-card">
+                        <h4>Upcoming</h4>
+                        <p>Estate Sale</p>
+                    </div>
+                </div>
+                <div class="preview-footer t1-footer">© Castleland Auctions</div>
+                <div class="color-swatches">
+                    <div class="swatch" style="background: #0077B6;"></div>
+                    <div class="swatch" style="background: #48CAE4;"></div>
+                    <div class="swatch" style="background: #90E0EF;"></div>
+                    <div class="swatch" style="background: #CAF0F8;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Template 2: Forest Meadow -->
+        <div class="template-card">
+            <div class="template-name">2. Forest Meadow</div>
+            <div class="template-preview">
+                <div class="preview-header t2-header">CASTLELAND AUCTIONS</div>
+                <div class="preview-hero t2-hero">
+                    <h3>Welcome to Castleland</h3>
+                    <p>Your trusted auction house</p>
+                    <span class="preview-btn t2-btn">View Auctions</span>
+                </div>
+                <div class="preview-cards">
+                    <div class="preview-card t2-card">
+                        <h4>Current Auction</h4>
+                        <p>House Cleanout</p>
+                    </div>
+                    <div class="preview-card t2-card">
+                        <h4>Upcoming</h4>
+                        <p>Estate Sale</p>
+                    </div>
+                </div>
+                <div class="preview-footer t2-footer">© Castleland Auctions</div>
+                <div class="color-swatches">
+                    <div class="swatch" style="background: #2D6A4F;"></div>
+                    <div class="swatch" style="background: #40916C;"></div>
+                    <div class="swatch" style="background: #95D5B2;"></div>
+                    <div class="swatch" style="background: #D8F3DC;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Template 3: Sky Blue -->
+        <div class="template-card">
+            <div class="template-name">3. Sky Blue</div>
+            <div class="template-preview">
+                <div class="preview-header t3-header">CASTLELAND AUCTIONS</div>
+                <div class="preview-hero t3-hero">
+                    <h3>Welcome to Castleland</h3>
+                    <p>Your trusted auction house</p>
+                    <span class="preview-btn t3-btn">View Auctions</span>
+                </div>
+                <div class="preview-cards">
+                    <div class="preview-card t3-card">
+                        <h4>Current Auction</h4>
+                        <p>House Cleanout</p>
+                    </div>
+                    <div class="preview-card t3-card">
+                        <h4>Upcoming</h4>
+                        <p>Estate Sale</p>
+                    </div>
+                </div>
+                <div class="preview-footer t3-footer">© Castleland Auctions</div>
+                <div class="color-swatches">
+                    <div class="swatch" style="background: #4A90A4;"></div>
+                    <div class="swatch" style="background: #5EB1D4;"></div>
+                    <div class="swatch" style="background: #89CFF0;"></div>
+                    <div class="swatch" style="background: #E0F4FF;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Template 4: Mint Fresh -->
+        <div class="template-card">
+            <div class="template-name">4. Mint Fresh</div>
+            <div class="template-preview">
+                <div class="preview-header t4-header">CASTLELAND AUCTIONS</div>
+                <div class="preview-hero t4-hero">
+                    <h3>Welcome to Castleland</h3>
+                    <p>Your trusted auction house</p>
+                    <span class="preview-btn t4-btn">View Auctions</span>
+                </div>
+                <div class="preview-cards">
+                    <div class="preview-card t4-card">
+                        <h4>Current Auction</h4>
+                        <p>House Cleanout</p>
+                    </div>
+                    <div class="preview-card t4-card">
+                        <h4>Upcoming</h4>
+                        <p>Estate Sale</p>
+                    </div>
+                </div>
+                <div class="preview-footer t4-footer">© Castleland Auctions</div>
+                <div class="color-swatches">
+                    <div class="swatch" style="background: #3EB489;"></div>
+                    <div class="swatch" style="background: #6BCCA2;"></div>
+                    <div class="swatch" style="background: #98E4C9;"></div>
+                    <div class="swatch" style="background: #E8FBF4;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Template 5: Sage & Stone -->
+        <div class="template-card">
+            <div class="template-name">5. Sage & Stone</div>
+            <div class="template-preview">
+                <div class="preview-header t5-header">CASTLELAND AUCTIONS</div>
+                <div class="preview-hero t5-hero">
+                    <h3>Welcome to Castleland</h3>
+                    <p>Your trusted auction house</p>
+                    <span class="preview-btn t5-btn">View Auctions</span>
+                </div>
+                <div class="preview-cards">
+                    <div class="preview-card t5-card">
+                        <h4>Current Auction</h4>
+                        <p>House Cleanout</p>
+                    </div>
+                    <div class="preview-card t5-card">
+                        <h4>Upcoming</h4>
+                        <p>Estate Sale</p>
+                    </div>
+                </div>
+                <div class="preview-footer t5-footer">© Castleland Auctions</div>
+                <div class="color-swatches">
+                    <div class="swatch" style="background: #6B7F6B;"></div>
+                    <div class="swatch" style="background: #8FB38F;"></div>
+                    <div class="swatch" style="background: #A8C5A8;"></div>
+                    <div class="swatch" style="background: #EDF4ED;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Template 6: Coastal Blue -->
+        <div class="template-card">
+            <div class="template-name">6. Coastal Blue</div>
+            <div class="template-preview">
+                <div class="preview-header t6-header">CASTLELAND AUCTIONS</div>
+                <div class="preview-hero t6-hero">
+                    <h3>Welcome to Castleland</h3>
+                    <p>Your trusted auction house</p>
+                    <span class="preview-btn t6-btn">View Auctions</span>
+                </div>
+                <div class="preview-cards">
+                    <div class="preview-card t6-card">
+                        <h4>Current Auction</h4>
+                        <p>House Cleanout</p>
+                    </div>
+                    <div class="preview-card t6-card">
+                        <h4>Upcoming</h4>
+                        <p>Estate Sale</p>
+                    </div>
+                </div>
+                <div class="preview-footer t6-footer">© Castleland Auctions</div>
+                <div class="color-swatches">
+                    <div class="swatch" style="background: #5B8FA8;"></div>
+                    <div class="swatch" style="background: #7BC0D8;"></div>
+                    <div class="swatch" style="background: #A3D4E8;"></div>
+                    <div class="swatch" style="background: #E8F5FA;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Template 7: Seafoam Dream -->
+        <div class="template-card">
+            <div class="template-name">7. Seafoam Dream</div>
+            <div class="template-preview">
+                <div class="preview-header t7-header">CASTLELAND AUCTIONS</div>
+                <div class="preview-hero t7-hero">
+                    <h3>Welcome to Castleland</h3>
+                    <p>Your trusted auction house</p>
+                    <span class="preview-btn t7-btn">View Auctions</span>
+                </div>
+                <div class="preview-cards">
+                    <div class="preview-card t7-card">
+                        <h4>Current Auction</h4>
+                        <p>House Cleanout</p>
+                    </div>
+                    <div class="preview-card t7-card">
+                        <h4>Upcoming</h4>
+                        <p>Estate Sale</p>
+                    </div>
+                </div>
+                <div class="preview-footer t7-footer">© Castleland Auctions</div>
+                <div class="color-swatches">
+                    <div class="swatch" style="background: #20B2AA;"></div>
+                    <div class="swatch" style="background: #4ECDC4;"></div>
+                    <div class="swatch" style="background: #7FDBDA;"></div>
+                    <div class="swatch" style="background: #E0F7F6;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Template 8: Warm Slate -->
+        <div class="template-card">
+            <div class="template-name">8. Warm Slate</div>
+            <div class="template-preview">
+                <div class="preview-header t8-header">CASTLELAND AUCTIONS</div>
+                <div class="preview-hero t8-hero">
+                    <h3>Welcome to Castleland</h3>
+                    <p>Your trusted auction house</p>
+                    <span class="preview-btn t8-btn">View Auctions</span>
+                </div>
+                <div class="preview-cards">
+                    <div class="preview-card t8-card">
+                        <h4>Current Auction</h4>
+                        <p>House Cleanout</p>
+                    </div>
+                    <div class="preview-card t8-card">
+                        <h4>Upcoming</h4>
+                        <p>Estate Sale</p>
+                    </div>
+                </div>
+                <div class="preview-footer t8-footer">© Castleland Auctions</div>
+                <div class="color-swatches">
+                    <div class="swatch" style="background: #5D7A8C;"></div>
+                    <div class="swatch" style="background: #6D98AE;"></div>
+                    <div class="swatch" style="background: #8FAFC2;"></div>
+                    <div class="swatch" style="background: #EEF3F6;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
