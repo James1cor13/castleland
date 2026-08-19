@@ -170,6 +170,20 @@
                             <a href="https://www.proxibid.com/Castleland-Management-LLC/90-Year-Old-Hunter-House-Garage-Cleanout-Auction/event-catalog/299604" class="btn"><i class="fas fa-gavel"></i> Bid Now</a>
                         </div>
                 </div>
+                <div class="auction-card" data-ended-message="This auction has ended." onclick="window.location.href='https://www.proxibid.com/Castleland-Management-LLC/The-Linger-Estate-Liquidation-Auction/event-catalog/300365'" style="cursor: pointer;">
+                        <div class="auction-image">
+                            <img src="Linger1.JPG" alt="The Linger Estate Liquidation Auction!" class="auction-photo" loading="lazy">
+                            <span class="auction-status status-open">Open</span>
+                        </div>
+                        <div class="auction-details">
+                            <h3>The Linger Estate Liquidation Auction!</h3>
+                            <div class="countdown-timer" data-end="2026-09-11T19:00:00Z">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span class="countdown-text">Loading...</span>
+                            </div>
+                            <a href="https://www.proxibid.com/Castleland-Management-LLC/The-Linger-Estate-Liquidation-Auction/event-catalog/300365" class="btn"><i class="fas fa-gavel"></i> Bid Now</a>
+                        </div>
+                </div>
                 <div class="auction-card" onclick="window.location.href='https://www.proxibid.com/Castleland-Management-LLC/Spring-Firearm-Liquidation-Auction-Part-2/event-catalog/296028'" style="cursor: pointer;">
                         <div class="auction-image">
                             <img src="springgun2.JPG" alt="Spring Firearm Liquidation Part 2!" class="auction-photo" loading="lazy">
@@ -517,6 +531,11 @@
                 if (auctionCard && auctionCard.querySelector('h3') && 
                     auctionCard.querySelector('h3').textContent.includes('Hunter House')) {
                     currentEndingDuration = 125 * 60 * 1000; // 2h 5m in milliseconds
+                }
+                // Special case for The Linger Estate Liquidation Auction - 60 minute ending duration (3:00pm - 4:00pm ET)
+                if (auctionCard && auctionCard.querySelector('h3') && 
+                    auctionCard.querySelector('h3').textContent.includes('Linger Estate')) {
+                    currentEndingDuration = 60 * 60 * 1000; // 1 hour in milliseconds
                 }
                 // Special case for Summer Clean-Out & Asset Liquidation auction - 138 minute ending duration (3:00pm - 5:18pm ET)
                 if (auctionCard && auctionCard.querySelector('h3') && 
