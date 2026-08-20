@@ -1922,10 +1922,36 @@ footer::before {
 
 @media (max-width: 480px) {
     .shelf-auction-grid .auction-card {
-        width: 46%;
+        width: 95%;
         max-width: none;
+        padding: var(--space-5);
     }
-    
+
+    .shelf-auction-grid .auction-card .auction-image {
+        width: 100%;
+    }
+
+    .shelf-auction-grid .auction-card .auction-details h3 {
+        font-size: var(--text-2xl);
+        margin-bottom: var(--space-4);
+    }
+
+    .shelf-auction-grid .auction-card .countdown-timer {
+        font-size: var(--text-lg);
+        padding: var(--space-3) var(--space-4);
+        margin-bottom: var(--space-4);
+    }
+
+    .shelf-auction-grid .auction-card .btn {
+        font-size: var(--text-base);
+        padding: var(--space-4) var(--space-5);
+    }
+
+    .shelf-auction-grid .auction-card .auction-status {
+        font-size: var(--text-base);
+        padding: var(--space-2) var(--space-3);
+    }
+
     .shelf-link-card {
         width: 95%;
         text-align: center;
