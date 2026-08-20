@@ -1871,19 +1871,20 @@ footer::before {
     
     .shelf-row {
         min-height: auto !important;
-        padding: var(--space-4) var(--space-3) !important;
+        padding: var(--space-4) var(--space-2) !important;
         flex-direction: column;
     }
     
     .shelf-auction-grid {
-        gap: var(--space-3);
-        flex-direction: row;
-        flex-wrap: wrap;
+        gap: var(--space-5);
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
         justify-content: center;
     }
     
     .shelf-auction-grid .auction-card {
-        width: 46%;
+        width: 100%;
         max-width: none;
         transform: none;
     }
@@ -1892,17 +1893,29 @@ footer::before {
         transform: translateY(-4px);
     }
     
+    .shelf-auction-grid .auction-card .auction-details {
+        padding: var(--space-5);
+    }
+    
     .shelf-auction-grid .auction-card .auction-details h3 {
-        font-size: var(--text-base);
+        font-size: var(--text-2xl);
+        margin-bottom: var(--space-4);
     }
     
     .shelf-auction-grid .auction-card .countdown-timer {
-        font-size: var(--text-sm);
+        font-size: var(--text-lg);
+        padding: var(--space-3) var(--space-4);
+        margin-bottom: var(--space-4);
     }
     
     .shelf-auction-grid .auction-card .btn {
-        font-size: var(--text-sm);
-        padding: var(--space-3) var(--space-4);
+        font-size: var(--text-lg);
+        padding: var(--space-4) var(--space-6);
+    }
+    
+    .shelf-auction-grid .auction-card .auction-status {
+        font-size: var(--text-base);
+        padding: var(--space-2) var(--space-4);
     }
     
     .shelf-links {
@@ -1922,9 +1935,8 @@ footer::before {
 
 @media (max-width: 480px) {
     .shelf-auction-grid .auction-card {
-        width: 95%;
+        width: 100%;
         max-width: none;
-        padding: var(--space-5);
     }
 
     .shelf-auction-grid .auction-card .auction-image {
@@ -1932,24 +1944,27 @@ footer::before {
     }
 
     .shelf-auction-grid .auction-card .auction-details h3 {
-        font-size: var(--text-2xl);
+        font-size: var(--text-3xl);
+        line-height: 1.2;
         margin-bottom: var(--space-4);
     }
 
     .shelf-auction-grid .auction-card .countdown-timer {
-        font-size: var(--text-lg);
-        padding: var(--space-3) var(--space-4);
-        margin-bottom: var(--space-4);
+        font-size: var(--text-xl);
+        padding: var(--space-4) var(--space-5);
+        margin-bottom: var(--space-5);
     }
 
     .shelf-auction-grid .auction-card .btn {
-        font-size: var(--text-base);
-        padding: var(--space-4) var(--space-5);
+        font-size: var(--text-xl);
+        padding: var(--space-5) var(--space-6);
+        width: 100%;
+        justify-content: center;
     }
 
     .shelf-auction-grid .auction-card .auction-status {
         font-size: var(--text-base);
-        padding: var(--space-2) var(--space-3);
+        padding: var(--space-2) var(--space-4);
     }
 
     .shelf-link-card {
