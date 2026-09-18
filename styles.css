@@ -1739,9 +1739,9 @@ footer::before {
     align-items: flex-end;
 }
 
-/* Small image button beside an auction card (1/4 card width, bottoms aligned) */
+/* Small image button beside an auction card (1/2 card width, bottoms aligned) */
 .shelf-auction-grid .video-button {
-    width: calc((100% - 2 * var(--space-3)) / 12);
+    width: calc((100% - 2 * var(--space-3)) / 6);
     flex-shrink: 0;
     order: 1;
     display: block;
@@ -1912,7 +1912,7 @@ footer::before {
     }
 
     .shelf-auction-grid .video-button {
-        width: 85px;
+        width: 170px;
     }
 }
 
@@ -1947,7 +1947,7 @@ footer::before {
     }
 
     .shelf-auction-grid .video-button {
-        width: 30%;
+        width: 60%;
         transform: none;
     }
 
