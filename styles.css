@@ -1736,6 +1736,55 @@ footer::before {
     gap: var(--space-3);
     max-width: 1400px;
     margin: 0 auto;
+    align-items: flex-end;
+}
+
+/* Small image button beside an auction card (1/4 card width, bottoms aligned) */
+.shelf-auction-grid .video-button {
+    width: calc((100% - 2 * var(--space-3)) / 12);
+    flex-shrink: 0;
+    order: 1;
+    display: block;
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--oak-300);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.5),
+        0 5px 15px rgba(0, 0, 0, 0.4);
+    transform: perspective(500px) rotateX(2deg);
+    transform-origin: bottom center;
+    transition: var(--transition-base);
+    text-decoration: none;
+}
+
+.shelf-auction-grid .video-button img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.shelf-auction-grid .video-button-label {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: var(--space-1) var(--space-2);
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
+    font-size: var(--text-xs);
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.shelf-auction-grid .video-button-label i {
+    color: #ff0000;
+}
+
+.shelf-auction-grid .video-button:hover {
+    transform: perspective(500px) rotateX(0deg) translateY(-6px);
+    border-color: var(--brass-400);
 }
 
 .shelf-auction-grid .auction-card {
@@ -1861,6 +1910,10 @@ footer::before {
     .shelf-auction-grid .auction-card {
         width: 340px;
     }
+
+    .shelf-auction-grid .video-button {
+        width: 85px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1891,6 +1944,16 @@ footer::before {
     
     .shelf-auction-grid .auction-card:hover {
         transform: translateY(-4px);
+    }
+
+    .shelf-auction-grid .video-button {
+        width: 30%;
+        transform: none;
+    }
+
+    .shelf-auction-grid .video-button-label {
+        font-size: var(--text-xs);
+        white-space: normal;
     }
     
     .shelf-auction-grid .auction-card .auction-details {
