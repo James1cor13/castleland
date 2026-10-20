@@ -36,7 +36,7 @@
         body { opacity: 0; }
         .loaded { opacity: 1; transition: opacity 0.3s ease-in; }
     </style>
-    <link rel="stylesheet" href="styles.css?v=20260918b">
+    <link rel="stylesheet" href="styles.css?v=20261020">
     <link rel="icon" type="image/png" href="Castleland logo 777.png">
     <link rel="apple-touch-icon" href="Castleland logo 777.png">
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -114,6 +114,16 @@
         <!-- SHELF 1: Current Auctions -->
         <div class="shelf-row" id="auctions" style="min-height: 35vh; align-items: flex-end; padding-bottom: 1.5rem; padding-top: 1rem;">
             <div class="shelf-auction-grid">
+                <div class="auction-card upcoming-card" onclick="window.location.href='upcoming-auctions.html'" style="cursor: pointer;">
+                        <div class="auction-image">
+                            <img src="upcoming-linger-cleanout.jpg" alt="Coming Soon: Linger Estate Auction Part 2 and a Huge House Clean Out Auction" class="auction-photo" loading="lazy">
+                            <span class="auction-status status-preview">Coming Soon</span>
+                        </div>
+                        <div class="auction-details">
+                            <h3>2 Exciting Auctions Coming Soon!</h3>
+                            <a href="upcoming-auctions.html" class="btn"><i class="fas fa-bell"></i> Get Notified</a>
+                        </div>
+                </div>
                 <div class="auction-card" data-ended-message="This auction ended! If you missed it, make sure you subscribe to our email list so you never miss an auction again!" data-ended-duration="86400000" onclick="window.location.href='https://www.proxibid.com/Castleland-Management-LLC/Summer-Clean-Out-Asset-Liquidation-Auction/event-catalog/298632'" style="cursor: pointer;">
                         <div class="auction-image">
                             <img src="summer1.JPG" alt="Summer Clean-Out &amp; Asset Liquidation Auction!" class="auction-photo" loading="lazy">
@@ -269,6 +279,21 @@
                         </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Upcoming Auctions Info Box -->
+        <div class="upcoming-auctions-box">
+            <h3><i class="fas fa-gavel"></i> 2 Exciting Auctions Coming Very Soon!</h3>
+            <div class="upcoming-auction-item">
+                <h4>Linger Estate Auction &ndash; Part 2</h4>
+                <p>Round two of the Linger Estate! More antiques, furniture, decor and collectibles from this beautiful estate.</p>
+            </div>
+            <div class="upcoming-auction-item">
+                <h4>HUGE House Clean Out Auction</h4>
+                <p>This one is packed! We found vintage items and collectibles, vintage beer signs, tools, fishing gear, a huge coin collection, silver, jewelry, watches and so much MORE!</p>
+            </div>
+            <p class="upcoming-cta-text">Subscribe to our email list to be the first to know when these catalogs go live and bidding opens!</p>
+            <a href="upcoming-auctions.html" class="upcoming-subscribe-btn"><i class="fas fa-envelope"></i> Subscribe to Our Emails</a>
         </div>
 
         <!-- Cleanouts Button (Mobile Only) -->
