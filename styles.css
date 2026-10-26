@@ -1731,16 +1731,18 @@ footer::before {
 /* Auction cards on shelves */
 .shelf-auction-grid {
     display: flex;
+    width: 100%;
     justify-content: center;
     flex-wrap: wrap;
-    gap: var(--space-3);
+    gap: var(--space-5);
     max-width: 1400px;
     margin: 0 auto;
     align-items: flex-end;
 }
 
 .shelf-auction-grid .auction-card {
-    width: calc((100% - 2 * var(--space-3)) / 3);
+    width: calc((100% - var(--space-5)) / 2);
+    max-width: 580px;
     flex-shrink: 0;
     background: rgba(235, 224, 204, 0.95);
     box-shadow: 
@@ -1759,23 +1761,23 @@ footer::before {
 }
 
 .shelf-auction-grid .auction-card .auction-details {
-    padding: var(--space-4);
+    padding: var(--space-5);
 }
 
 .shelf-auction-grid .auction-card .auction-details h3 {
-    font-size: var(--text-base);
+    font-size: var(--text-xl);
     margin-bottom: var(--space-3);
 }
 
 .shelf-auction-grid .auction-card .countdown-timer {
-    font-size: var(--text-sm);
-    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-base);
+    padding: var(--space-3) var(--space-4);
     margin-bottom: var(--space-3);
 }
 
 .shelf-auction-grid .auction-card .btn {
-    padding: var(--space-3) var(--space-4);
-    font-size: var(--text-sm);
+    padding: var(--space-4) var(--space-5);
+    font-size: var(--text-base);
     background-image: url('button new.png');
     background-size: 200%;
     background-position: center top;
@@ -1860,7 +1862,7 @@ footer::before {
 /* Responsive shelf layout */
 @media (max-width: 992px) {
     .shelf-auction-grid .auction-card {
-        width: 340px;
+        width: calc((100% - var(--space-5)) / 2);
     }
 }
 
