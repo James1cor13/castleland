@@ -1024,7 +1024,7 @@ nav .nav-cta::after {
 .contact-item i {
     font-size: var(--text-xl);
     color: #0a0a0a;
-    background: var(--dusty-400);
+    background: #ffffff;
     width: 48px;
     height: 48px;
     min-width: 48px;
