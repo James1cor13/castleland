@@ -156,6 +156,20 @@
                             <a href="https://www.proxibid.com/Castleland-Management-LLC/Fall-Firearm-Accessories-Liquidation-Auction/event-catalog/303362" class="btn"><i class="fas fa-gavel"></i> Bid Now</a>
                         </div>
                 </div>
+                <div class="auction-card" data-ended-message="This auction has ended, but subscribe to get updates on future auctions!" data-ended-duration="172800000" onclick="window.location.href='https://www.proxibid.com/Castleland-Management-LLC/Black-Friday-Barn-Garage-Cleanout-Auction/event-catalog/303677'" style="cursor: pointer;">
+                        <div class="auction-image">
+                            <img src="BlackFridayBarn.jpg" alt="Black Friday Barn &amp; Garage Cleanout Auction!" class="auction-photo" loading="lazy">
+                            <span class="auction-status status-open">Open</span>
+                        </div>
+                        <div class="auction-details">
+                            <h3>Black Friday Barn &amp; Garage Cleanout Auction!</h3>
+                            <div class="countdown-timer" data-end="2026-11-27T20:00:00Z">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span class="countdown-text">Loading...</span>
+                            </div>
+                            <a href="https://www.proxibid.com/Castleland-Management-LLC/Black-Friday-Barn-Garage-Cleanout-Auction/event-catalog/303677" class="btn"><i class="fas fa-gavel"></i> Bid Now</a>
+                        </div>
+                </div>
                 <div class="auction-card" data-ended-message="This auction ended! If you missed it, make sure you subscribe to our email list so you never miss an auction again!" data-ended-duration="86400000" onclick="window.location.href='https://www.proxibid.com/Castleland-Management-LLC/Summer-Clean-Out-Asset-Liquidation-Auction/event-catalog/298632'" style="cursor: pointer;">
                         <div class="auction-image">
                             <img src="summer1.JPG" alt="Summer Clean-Out &amp; Asset Liquidation Auction!" class="auction-photo" loading="lazy">
@@ -598,6 +612,12 @@
                 if (auctionCard && auctionCard.querySelector('h3') && 
                     auctionCard.querySelector('h3').textContent.includes('Fall Firearm')) {
                     currentEndingDuration = 30 * 60 * 1000; // 30 minutes in milliseconds
+                }
+                
+                // Special case for Black Friday Barn & Garage Cleanout Auction - 90 minute ending duration (3:00pm - 4:30pm ET)
+                if (auctionCard && auctionCard.querySelector('h3') && 
+                    auctionCard.querySelector('h3').textContent.includes('Black Friday Barn')) {
+                    currentEndingDuration = 90 * 60 * 1000; // 1.5 hours in milliseconds
                 }
                 
                 // Auction ended more than ending duration ago
