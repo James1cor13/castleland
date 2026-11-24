@@ -184,6 +184,20 @@
                             <a href="https://www.proxibid.com/Castleland-Management-LLC/Johnny-Wallace-Antique-Store-Liquidation-Auction/event-catalog/303899" class="btn"><i class="fas fa-gavel"></i> Bid Now</a>
                         </div>
                 </div>
+                <div class="auction-card" data-bidding-opens="2026-11-25T22:00:00Z" data-ended-message="This auction has ended, but subscribe to get updates on future auctions!" data-ended-duration="172800000" onclick="window.location.href='https://www.proxibid.com/Castleland-Management-LLC/246-Orchard-Hill-Dr-N-Canton-Estate-Liquidation/event-catalog/304019'" style="cursor: pointer;">
+                        <div class="auction-image">
+                            <img src="OrchardHill.jpg" alt="246 Orchard Hill Dr. N Canton Estate Liquidation!" class="auction-photo" loading="lazy">
+                            <span class="auction-status status-preview">Preview</span>
+                        </div>
+                        <div class="auction-details">
+                            <h3>246 Orchard Hill Dr. N Canton Estate Liquidation!</h3>
+                            <div class="countdown-timer" data-end="2026-12-11T20:00:00Z">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span class="countdown-text">Bidding opens Wednesday, November 25 at 5:00 PM ET</span>
+                            </div>
+                            <a href="https://www.proxibid.com/Castleland-Management-LLC/246-Orchard-Hill-Dr-N-Canton-Estate-Liquidation/event-catalog/304019" class="btn"><i class="fas fa-eye"></i> View Catalog</a>
+                        </div>
+                </div>
                 <div class="auction-card" data-ended-message="This auction ended! If you missed it, make sure you subscribe to our email list so you never miss an auction again!" data-ended-duration="86400000" onclick="window.location.href='https://www.proxibid.com/Castleland-Management-LLC/Summer-Clean-Out-Asset-Liquidation-Auction/event-catalog/298632'" style="cursor: pointer;">
                         <div class="auction-image">
                             <img src="summer1.JPG" alt="Summer Clean-Out &amp; Asset Liquidation Auction!" class="auction-photo" loading="lazy">
@@ -580,6 +594,17 @@
                 const auctionCard = timer.closest('.auction-card');
                 const countdownText = timer.querySelector('.countdown-text');
                 
+                if (auctionCard?.dataset.biddingOpens) {
+                    const statusBadge = auctionCard.querySelector('.status-preview');
+                    if (statusBadge) {
+                        if (now < Date.parse(auctionCard.dataset.biddingOpens)) return;
+
+                        statusBadge.classList.replace('status-preview', 'status-open');
+                        statusBadge.textContent = 'Open';
+                        auctionCard.querySelector('.btn').innerHTML = '<i class="fas fa-gavel"></i> Bid Now';
+                    }
+                }
+
                 // Special case for Spring Clean-Out Auction #3 - 45min ending duration
                 let currentEndingDuration = endingDuration;
                 if (auctionCard && auctionCard.querySelector('h3') && 
